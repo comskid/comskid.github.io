@@ -3,13 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>catgirl | cog</title>
-<meta property="og:type" content="Catgirls">
-<meta content="#00ff00" data-react-helmet="true" name="theme-color"/>
-<meta property="og:url" content="catgirls.wiki" />
-<meta name="theme-color" content="#2B2D31">
-<link href="css/comskid.css" rel="stylesheet">
-<script src="js/snowstorm.js"></script>
+<title>FishNet | vac</title>
 <style>
   body {
     background-color: black;
@@ -28,6 +22,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     white-space: pre;
+    animation: flicker 1s infinite alternate; /* Apply flicker animation */
   }
   .bottom-text {
     position: absolute;
@@ -47,15 +42,23 @@
   }
 </style>
 </head>
-<body onclick="enterSite()">
+<body>
 <div class="ascii-art">
   <!-- ASCII art goes here -->
   <pre>
- 
-  </pre>
-</div>
-<div class="bottom-text">
-  Click to Enter
+
+█████▒██▓  ██████  ██░ ██  ███▄    █ ▓█████▄▄▄█████▓
+▓██   ▒▓██▒▒██    ▒ ▓██░ ██▒ ██ ▀█   █ ▓█   ▀▓  ██▒ ▓▒
+▒████ ░▒██▒░ ▓██▄   ▒██▀▀██░▓██  ▀█ ██▒▒███  ▒ ▓██░ ▒░
+░▓█▒  ░░██░  ▒   ██▒░▓█ ░██ ▓██▒  ▐▌██▒▒▓█  ▄░ ▓██▓ ░ 
+░▒█░   ░██░▒██████▒▒░▓█▒░██▓▒██░   ▓██░░▒████▒ ▒██▒ ░ 
+▒ ░   ░▓  ▒ ▒▓▒ ▒ ░ ▒ ░░▒░▒░ ▒░   ▒ ▒ ░░ ▒░ ░ ▒ ░░   
+░      ▒ ░░ ░▒  ░ ░ ▒ ░▒░ ░░ ░░   ░ ▒░ ░ ░  ░   ░    
+░ ░    ▒ ░░  ░  ░   ░  ░░ ░   ░   ░ ░    ░    ░      
+  ░        ░   ░  ░  ░         ░    ░  ░              
+
+                              Click To Enter                                  
+</pre>
 </div>
 <script>
   document.onkeydown = function(e) {
@@ -78,31 +81,20 @@
   document.addEventListener('contextmenu', function(e) {
   e.preventDefault();
   });
-
-  function enterSite() {
-    document.getElementById('site').hidden = false;
-    document.getElementById('button').hidden = true;
-  }
-
-  // Autoplay audio on page load
-  window.onload = function() {
-    playAudio();
-  };
-
   function playAudio() {
-    myAudio = new Audio('audio/4u.mp3'); 
-    if (typeof myAudio.loop == 'boolean')
-    {
-        myAudio.loop = true;
-    }
-    else
-    {
-        myAudio.addEventListener('ended', function() {
-            this.currentTime = 0;
-            this.play();
-        }, false);
-    }
-    myAudio.play();
+      myAudio = new Audio('audio/4u.mp3'); 
+      if (typeof myAudio.loop == 'boolean')
+      {
+          myAudio.loop = true;
+      }
+      else
+      {
+          myAudio.addEventListener('ended', function() {
+              this.currentTime = 0;
+              this.play();
+          }, false);
+      }
+      myAudio.play();
   }
 </script>
 </body>
