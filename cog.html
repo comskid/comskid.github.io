@@ -6,7 +6,7 @@
 <title>catgirls | cog</title>
 <style>
   body {
-    background-color: black; /* Set initial background color to black */
+    background-color: black;
     color: blue;
     font-family: monospace;
     font-size: 12px;
@@ -34,6 +34,10 @@
   }
   .linksnshit a {
     font-size: 14px;
+  }
+  .pfp {
+    margin: 0 auto; /* Center the profile picture */
+    display: block;
   }
   @keyframes flicker {
     0% { color: red; }
@@ -98,7 +102,7 @@
       ⠀⠀⠀⠀⠀⢿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠒⠒⢦⠾⠿⣄⣀⠀⠀⠀⠉⠉⠉⠙⠒⠀⠀⠀⠀⠤⠤⢤⣤⣤⣤⣤⡤⣴⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
       ⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠀⠀⠀⠀⠈⠉⠀⠐⠒⠒⠶⠦⠤⠤⠤⠀⠀⠀⠀⠀⠈⠉⠉⠁⢹⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-                              Click To Enter                                  
+                              Click To Enter                 
 </pre>
 </div>
 <script>
@@ -123,7 +127,7 @@
   e.preventDefault();
   });
   function playAudio() {
-      myAudio = new Audio('https://comskid.github.io/audio/catgirls.mp3'); 
+      var myAudio = new Audio('audio/catgirls.mp3'); // Make sure the path to your audio file is correct
       myAudio.loop = true;
       myAudio.play();
   }
