@@ -49,7 +49,8 @@
   }
 </style>
 </head>
-<body>
+<body onclick="openSite()">
+<div id="black-screen"></div> <!-- Black screen -->
 <div class="ascii-art">
   <!-- ASCII art goes here -->
   <pre>
@@ -147,10 +148,14 @@
       myAudio.loop = true;
       myAudio.play();
   }
-  playAudio(); // Start playing the audio automatically
-  document.getElementById('site').removeAttribute('hidden'); // Show the site content
-  document.body.style.backgroundColor = 'white'; // Change the background color to white
-  document.querySelector('.ascii-art').style.display = 'none'; // Hide the ASCII art
+  function openSite() {
+      document.getElementById('site').removeAttribute('hidden'); // Show the site content
+      document.getElementById('black-screen').style.display = 'none'; // Hide the black screen
+      document.body.style.backgroundColor = 'white'; // Change the background color to white
+      document.querySelector('.ascii-art').style.display = 'none'; // Hide the ASCII art
+      playAudio(); // Start playing the audio
+      document.body.onclick = null; // Remove the click event listener
+  }
 </script>
 </body>
 </html>
