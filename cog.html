@@ -6,11 +6,11 @@
 <title>catgirls | cog</title>
 <style>
   body {
-    background-color: black;
+    background-color: black; /* Set initial background color to black */
     color: blue;
     font-family: monospace;
-    font-size: 12px; /* Adjust font size */
-    line-height: 1.5; /* Adjust line height */
+    font-size: 12px;
+    line-height: 1.5;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -26,14 +26,14 @@
   }
   .bottom-text {
     position: absolute;
-    bottom: 50px; /* Adjust bottom spacing */
+    bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
-    color: white; /* Change color of text to white */
-    animation: flicker 1s infinite alternate; /* Apply flicker animation */
+    color: white;
+    animation: flicker 1s infinite alternate;
   }
   .linksnshit a {
-    font-size: 14px; /* Adjust font size of links */
+    font-size: 14px;
   }
   @keyframes flicker {
     0% { color: red; }
@@ -123,32 +123,28 @@
   e.preventDefault();
   });
   function playAudio() {
-      myAudio = new Audio('catgirls.mp3'); 
-      myAudio.loop = true; // Set the audio to loop
-      myAudio.play(); // Start playing the audio
+      myAudio = new Audio('https://comskid.github.io/audio/catgirls.mp3'); 
+      myAudio.loop = true;
+      myAudio.play();
   }
   function openSite() {
-      // Change background color to white
-      document.body.style.backgroundColor = 'white';
-      // Hide the ASCII art
-      document.querySelector('.ascii-art').style.display = 'none';
-      // Show the rest of the site content
-      document.getElementById('site').hidden = false;
-      // Start playing the audio
-      playAudio();
+      document.body.style.backgroundColor = 'white'; // Change background color to white
+      document.querySelector('.ascii-art').style.display = 'none'; // Hide ASCII art
+      document.getElementById('site').hidden = false; // Show the rest of the site content
+      playAudio(); // Start playing the audio
+      document.body.onclick = null; // Remove the click event listener
   }
 </script>
 <div id="site" hidden>
   <!-- Rest of your site content goes here -->
   <div class="box">
     <pre>
-      <img class="pfp" src="https://cdn.discordapp.com/attachments/1143218847839703071/1150354649115795506/IMG_6484.jpg">
+      <img class="pfp" src="img.jpg"> <!-- Replace 'img.jpg' with your actual image file name -->
     </pre>
     <div class="linksnshit">
       <a>♱ cog/vac | cutest kitty in com :3 ♱</a><br>
       <a href="https://t.me/skiddler1337">♱ Telegram ♱ </a>
-      <a href="https://discordapp.com/users/1021685913560043534">♱ Discord ♱</a>
-      <a href="https://www.roblox.com/users/1241282062/profile">♱ Roblox ♱</a><br>
+      <a href="https://discordapp.com/users/catgirls.com">♱ Discord ♱</a>
       <a href="founders.html">♱ back ♱</a>
     </div>
   </div>
