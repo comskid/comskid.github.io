@@ -48,7 +48,10 @@
   }
 </style>
 </head>
-<body onclick="redirectToSite()">
+<body>
+<div id="contentWrapper" style="display: none;">
+  <!-- Your site content goes here -->
+</div>
 <div class="ascii-art">
   <!-- ASCII art goes here -->
   <pre>
@@ -146,9 +149,15 @@
     playAudio();
   };
 
-  function redirectToSite() {
-    window.location.href = "catgirls.wiki/cog";
+  // Function to reveal the rest of the site upon click
+  function revealSite() {
+    document.getElementById("contentWrapper").style.display = "block";
+    document.body.style.backgroundColor = "transparent";
+    document.getElementsByClassName("bottom-text")[0].style.display = "none";
   }
+
+  // Add click event listener to the body
+  document.body.addEventListener("click", revealSite);
 </script>
 </body>
 </html>
