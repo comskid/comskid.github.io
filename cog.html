@@ -49,9 +49,6 @@
 </style>
 </head>
 <body>
-<div id="contentWrapper" style="display: none;">
-  <!-- Your site content goes here -->
-</div>
 <div class="ascii-art">
   <!-- ASCII art goes here -->
   <pre>
@@ -105,7 +102,7 @@
     ⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠀⠀⠀⠀⠈⠉⠀⠐⠒⠒⠶⠦⠤⠤⠤⠀⠀⠀⠀⠀⠈⠉⠉⠁⢹⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
   </pre>
 </div>
-<div class="bottom-text" id="bottomText">
+<div class="bottom-text">
   click to enter.
 </div>
 <script>
@@ -130,34 +127,14 @@
   e.preventDefault();
   });
   function playAudio() {
-      myAudio = new Audio('audio/catgirls.mp3'); 
-      if (typeof myAudio.loop == 'boolean')
-      {
-          myAudio.loop = true;
-      }
-      else
-      {
-          myAudio.addEventListener('ended', function() {
-              this.currentTime = 0;
-              this.play();
-          }, false);
-      }
+      myAudio = new Audio('audio/catgirls.mp3');
+      myAudio.loop = true;
       myAudio.play();
   }
   // Autoplay audio on page load
   window.onload = function() {
     playAudio();
   };
-
-  // Function to reveal the rest of the site upon click
-  function revealSite() {
-    document.getElementById("contentWrapper").style.display = "block";
-    document.body.style.backgroundColor = "black";
-    document.getElementById("bottomText").style.display = "none";
-  }
-
-  // Add click event listener to the body
-  document.body.addEventListener("click", revealSite);
 </script>
 </body>
 </html>
