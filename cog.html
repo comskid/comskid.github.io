@@ -9,8 +9,8 @@
     background-color: black;
     color: blue;
     font-family: monospace;
-    font-size: 10px;
-    line-height: 1;
+    font-size: 12px; /* Adjust font size */
+    line-height: 1.5; /* Adjust line height */
     text-align: center;
     margin: 0;
     padding: 0;
@@ -31,6 +31,9 @@
     transform: translateX(-50%);
     color: white; /* Change color of text to white */
     animation: flicker 1s infinite alternate; /* Apply flicker animation */
+  }
+  .linksnshit a {
+    font-size: 14px; /* Adjust font size of links */
   }
   @keyframes flicker {
     0% { color: red; }
@@ -137,6 +140,8 @@
   function openSite() {
       // Change background color to white
       document.body.style.backgroundColor = 'white';
+      // Hide the ASCII art
+      document.querySelector('.ascii-art').style.display = 'none';
       // Show the rest of the site content
       document.getElementById('site').hidden = false;
       // Start playing the audio
