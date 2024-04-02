@@ -124,18 +124,8 @@
   });
   function playAudio() {
       myAudio = new Audio('catgirls.mp3'); 
-      if (typeof myAudio.loop == 'boolean')
-      {
-          myAudio.loop = true;
-      }
-      else
-      {
-          myAudio.addEventListener('ended', function() {
-              this.currentTime = 0;
-              this.play();
-          }, false);
-      }
-      myAudio.play();
+      myAudio.loop = true; // Set the audio to loop
+      myAudio.play(); // Start playing the audio
   }
   function openSite() {
       // Change background color to white
