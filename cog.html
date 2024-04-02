@@ -80,8 +80,9 @@
   e.preventDefault();
   });
   function playAudio() {
-      var myAudio = new Audio('audio/pie.mp3'); // Make sure the path to your audio file is correct
+      var myAudio = new Audio('audio/pie.mp3');
       myAudio.loop = true;
+      myAudio.preload = 'auto'; // Preload the audio
       myAudio.play();
   }
   playAudio(); // Start playing the audio
