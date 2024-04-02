@@ -41,13 +41,13 @@
   }
 </style>
 </head>
-<body>
+<body onclick="openSite()">
 <div id="black-screen"></div> <!-- Black screen -->
-<div id="site">
+<div id="site" hidden>
   <!-- Rest of your site content goes here -->
   <div class="box">
     <pre>
-      <img class="pfp" src="img/boat.png"> <!-- Adjust the path to 'img/boat.png' -->
+      <img class="pfp" src="img/boat.png"> <!-- Update the src attribute with the correct path to your image -->
     </pre>
     <div class="linksnshit">
       <a>♱ cog/retain | troll ♱</a><br>
@@ -80,12 +80,17 @@
   e.preventDefault();
   });
   function playAudio() {
-      var myAudio = new Audio('audio/pie.mp3');
+      var myAudio = new Audio('audio/pie.mp3'); // Make sure the path to your audio file is correct
       myAudio.loop = true;
-      myAudio.preload = 'auto'; // Preload the audio
       myAudio.play();
   }
-  playAudio(); // Start playing the audio
+  function openSite() {
+      document.getElementById('site').removeAttribute('hidden'); // Show the site content
+      document.getElementById('black-screen').style.display = 'none'; // Hide the black screen
+      document.body.style.backgroundColor = 'white'; // Change the background color to white
+      playAudio(); // Start playing the audio
+      document.body.onclick = null; // Remove the click event listener
+  }
 </script>
 </body>
 </html>
