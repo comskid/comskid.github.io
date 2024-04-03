@@ -47,9 +47,11 @@
 </style>
 </head>
 <body>
-<audio autoplay loop controls style="display: none;">
-  <source src="catgirls.mp3" type="audio/mp3">
-  Your browser does not support the audio element.
+<audio 
+ function playAudio() {
+      var myAudio = new Audio('audio/catgirls.mp3'); // Make sure the path to your audio file is correct
+      myAudio.loop = true;
+      myAudio.play();
 </audio>
 <div class="container">
   <div class="ascii-art">
