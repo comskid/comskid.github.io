@@ -47,12 +47,17 @@
 </style>
 </head>
 <body>
-<audio 
- function playAudio() {
-      var myAudio = new Audio('audio/catgirls.mp3'); // Make sure the path to your audio file is correct
-      myAudio.loop = true;
-      myAudio.play();
-</audio>
+<audio id="background-music" src="audio/catgirls.mp3" loop></audio>
+<script>
+  // Function to play audio
+  function playAudio() {
+    var audio = document.getElementById("background-music");
+    audio.play();
+  }
+
+  // Call the playAudio function when the page loads
+  window.onload = playAudio;
+</script>
 <div class="container">
   <div class="ascii-art">
     <!-- ASCII art goes here -->
