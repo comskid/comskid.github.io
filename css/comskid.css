@@ -1,14 +1,13 @@
 html, body {
     height: 100%;
     overflow: hidden;
-    margin: 0; /* Add margin: 0; to reset default margins */
-    padding: 0; /* Add padding: 0; to reset default padding */
+    margin: 0;
+    padding: 0;
 }
 
 body {
     position: relative;
-    /* Update the URL with the relative path to your image */
-    background-image: url("img/lSfAKNy.png");
+    background-image: url("img/lSfAKNy.png"); /* Update the URL with the correct relative path */
     background-size: cover;
     background-position: center center;
     font-family: 'Roboto', sans-serif;
