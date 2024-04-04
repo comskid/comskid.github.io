@@ -1,7 +1,8 @@
 html, body {
     height: 100%;
-    overflow: hidden
+    overflow: hidden; /* This prevents scrollbars */
 }
+
 body {
     position: relative;
     background-image: url("../img/side.jpg");
@@ -37,11 +38,8 @@ a {
 }
 
 .box {
-    width: 550px; 
-    height: 350px;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    font-family: 'Roboto', sans-serif;
+    width: 550px; /* Adjust the width as needed */
+    height: 350px; /* Adjust the height as needed */
     border-radius: 25px;
     display: flex;
     flex-direction: column;
@@ -53,18 +51,20 @@ a {
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .ascii {
+    /* The ASCII art styles */
     display: flex;
     top: 7%;
     position: absolute;
     font-family: 'Roboto', sans-serif;
     color: white;
-    z-index: 1; /* Ensure it's on top of other elements */
 }
 
 .linksnshit {
+    /* The links and other elements styles */
     top: 50%;
     position: absolute;
     display: flex;
@@ -74,6 +74,7 @@ a {
 }
 
 .pfp {
+    /* Profile picture (pfp) styles */
     border-radius: 50%;
     width: 140px;
     height: 140px;
@@ -81,17 +82,4 @@ a {
     left: 36%;
     border: 0px solid #ffffff;
     position: absolute;
-}
-
-/* Styles for social icons */
-.social-icon {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.9); /* White with transparency */
-    box-shadow: 0 0 10px #FFFFFF; /* Glowing effect */
-    margin: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
