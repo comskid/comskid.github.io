@@ -11,8 +11,27 @@
     <script src="js/snowstorm.js"></script>
     <style>
         /* Add glowing text effect to all text */
-        body, a, button {
-            text-shadow: 0 0 10px #e8fce8, 0 0 20px #e8fce8, 0 0 30px #e8fce8;
+        body, a, button, .flowing-text {
+            text-shadow: 0 0 10px #FCA7E4, 0 0 20px #FCA7E4, 0 0 30px #FCA7E4;
+        }
+
+        /* Style for the separate section of flowing text */
+        .flowing-text {
+            position: absolute;
+            top: 10%; /* Adjust the vertical position as needed */
+            left: 10px; /* Adjust the horizontal position as needed */
+            color: white;
+            font-size: 20px; /* Adjust the font size as needed */
+            animation: flowDown 5s linear infinite;
+        }
+
+        @keyframes flowDown {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100%);
+            }
         }
     </style>
 </head>
@@ -51,6 +70,13 @@ $$ |     $$  __$$ | $$ |$$\ $$ |  $$ |$$ |$$ |      $$ | \____$$\
             </pre>
         </div>
     </button>
+</div>
+
+<!-- Separate section for flowing text -->
+<div class="flowing-text">
+    <p>This is a placeholder for flowing text.</p>
+    <p>You can add as many lines of text as you like here.</p>
+    <p>Each line will flow down independently.</p>
 </div>
 
 <script>
