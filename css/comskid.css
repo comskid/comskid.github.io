@@ -1,8 +1,7 @@
 html, body {
     height: 100%;
-    overflow: hidden; /* This prevents scrollbars */
+    overflow: hidden
 }
-
 body {
     position: relative;
     background-image: url("../img/side.jpg");
@@ -38,8 +37,11 @@ a {
 }
 
 .box {
-    width: 550px; /* Adjust the width as needed */
-    height: 350px; /* Adjust the height as needed */
+    width: 550px; 
+    height: 350px;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-family: 'Roboto', sans-serif;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
@@ -51,33 +53,31 @@ a {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Center the box */
 }
 
-.ascii {
-    /* The ASCII art styles */
-    position: absolute;
-    top: 20px; /* Adjust the top position as needed */
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: 'Roboto', sans-serif;
-    color: white;
-}
+    .ascii {
+        display: flex;
+        top: 7%;
+        position: absolute;
+        font-family: 'Roboto', sans-serif;
+        color: white
+    }
 
-.linksnshit {
-    /* The links and other elements styles */
-    position: absolute;
-    bottom: 20px; /* Adjust the bottom position as needed */
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-top: 2px;
-}
+    .linksnshit {
+        top: 50%;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 2px;
+    }
 
-.pfp {
-    /* Profile picture (pfp) styles */
-    border-radius: 50%;
-    width: 140px;
-    height: 140px;
-    border: 0px solid #ffffff;
-}
+    .pfp {
+        border-radius: 50%;
+        width: 140px;
+        height: 140px;
+        top: 7%;
+        left: 36%;
+        border: 1px solid #ffffff;
+        position: absolute;
+    }
