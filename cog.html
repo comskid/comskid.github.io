@@ -17,6 +17,7 @@
 
         /* Style for the separate section of flowing text */
         .flowing-text {
+            display: none; /* Initially hide the flowing text */
             position: absolute;
             top: 10%; /* Adjust the vertical position as needed */
             left: 10px; /* Adjust the horizontal position as needed */
@@ -50,7 +51,7 @@
 </div>
 
 <div>
-    <button id="button" style="color:hwb(0 100% 0%); font-family:'Courier New', Courier, monospace; border: none; margin: 0; background-color: #000000; position: absolute; top: 50%;left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); width: 100%; height: 100%;" onclick="playAudio();document.getElementById('button').hidden=true;document.getElementById('site').hidden=false">   
+    <button id="button" style="color:hwb(0 100% 0%); font-family:'Courier New', Courier, monospace; border: none; margin: 0; background-color: #000000; position: absolute; top: 50%;left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); width: 100%; height: 100%;">   
         <div class="center">
             <pre>
 
@@ -74,9 +75,18 @@ $$ |     $$  __$$ | $$ |$$\ $$ |  $$ |$$ |$$ |      $$ | \____$$\
 
 <!-- Separate section for flowing text -->
 <div class="flowing-text">
-    <p>This is a placeholder for flowing text.</p>
-    <p>You can add as many lines of text as you like here.</p>
-    <p>Each line will flow down independently.</p>
+    <p>I don't wanna talk, I just wanna get my dick sucked</p>
+    <p>When I'm off the Xan, you can hear it in my hiccups</p>
+    <p>Actin' like you got it, yeah you goin' get your shit took</p>
+    <p>My bro got the bag, but he don't carry no textbook</p>
+    <p>My bro got the bag, he got thirty clips and ghost guns</p>
+    <p>We been snappin' thirties, me and bro been on a dope run</p>
+    <p>Slid another thirty, off the thirty, boy so dumb</p>
+    <p>Opps steady slyin', said we smoke, we didn't smoke nun'</p>
+    <p>I be gettin' fried off the coke and Oxycodones</p>
+    <p>We both swag, doin' drugs all alone</p>
+    <p>Weed and wax, now I feel so strong</p>
+    <p>Bitches throwin' ass, and this cash on the floor</p>
 </div>
 
 <script>
@@ -100,7 +110,14 @@ $$ |     $$  __$$ | $$ |$$\ $$ |  $$ |$$ |$$ |      $$ | \____$$\
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
     });
-    document.getElementById('site').hidden=true
+    document.getElementById('site').hidden=true;
+    document.addEventListener('click', function() {
+        document.querySelector('.flowing-text').style.display = 'block';
+        playAudio();
+        document.getElementById('button').hidden=true;
+        document.getElementById('site').hidden=false;
+    });
+
     function playAudio() {
         myAudio = new Audio('audio/cheer.mp3'); 
         if (typeof myAudio.loop == 'boolean')
