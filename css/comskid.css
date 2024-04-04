@@ -7,7 +7,8 @@ html, body {
 
 body {
     position: relative;
-    background-image: url("../img/isfakny.png");
+    /* Update the URL with the relative path to your image */
+    background-image: url("img/lSfAKNy.png");
     background-size: cover;
     background-position: center center;
     font-family: 'Roboto', sans-serif;
