@@ -91,16 +91,6 @@
         #button pre {
             visibility: hidden;
         }
-
-        /* Hide the site content by default */
-        #site {
-            display: none;
-        }
-
-        /* Hide snow container by default */
-        #snow-container {
-            display: none;
-        }
     </style>
 </head>
 <body>
@@ -134,30 +124,23 @@
 <button id="button" onclick="playAudio()">   
     <div class="center">
         <pre>
-            $$\               $$\           $$\           
-            $$ |              \__|          $$ |          
- $$$$$$$\ $$$$$$\ $$$$$$\    $$$$$$\  $$\  $$$$$$\  $$ | $$$$$$$\ 
-$$  _____|\____$$\\_$$  _|  $$  __$$\ $$ |$$  __$$\ $$ |$$  _____|
-$$ /      $$$$$$$ | $$ |    $$ /  $$ |$$ |$$ |  \__|$$ |\$$$$$$\  
-$$ |     $$  __$$ | $$ |$$\ $$ |  $$ |$$ |$$ |      $$ | \____$$\ 
-\$$$$$$$\\$$$$$$$ | \$$$$  |\$$$$$$$ |$$ |$$ |      $$ |$$$$$$$  |
- \_______|\_______|  \____/  \____$$ |\__|\__|      \__|\_______/ 
-                            $$\   $$ |                            
-                            \$$$$$$  |                            
-                             \______/                             
 
-                              Click To Continue To The Site.                             
+                            $$\               $$\           $$\           
+                            $$ |              \__|          $$ |          
+         $$$$$$$\ $$$$$$\ $$$$$$\    $$$$$$\  $$\  $$$$$$\  $$ | $$$$$$$\ 
+        $$  _____|\____$$\\_$$  _|  $$  __$$\ $$ |$$  __$$\ $$ |$$  _____|
+        $$ /      $$$$$$$ | $$ |    $$ /  $$ |$$ |$$ |  \__|$$ |\$$$$$$\  
+        $$ |     $$  __$$ | $$ |$$\ $$ |  $$ |$$ |$$ |      $$ | \____$$\ 
+        \$$$$$$$\\$$$$$$$ | \$$$$  |\$$$$$$$ |$$ |$$ |      $$ |$$$$$$$  |
+         \_______|\_______|  \____/  \____$$ |\__|\__|      \__|\_______/ 
+                                    $$\   $$ |                            
+                                    \$$$$$$  |                            
+                                     \______/                             
+
+                                      Click To Continue To The Site.          
         </pre>
     </div>
 </button>
-
-<!-- Snow container -->
-<div id="snow-container"></div>
-
-<!-- Site content -->
-<div id="site">
-    <!-- Your site content goes here -->
-</div>
 
 <script>
     document.onkeydown = function(e) {
@@ -185,10 +168,6 @@ $$ |     $$  __$$ | $$ |$$\ $$ |  $$ |$$ |$$ |      $$ | \____$$\
         // Play audio
         var myAudio = new Audio('audio/cheer.mp3'); 
         myAudio.play();
-
-        // Show the site content and snow container
-        document.getElementById('site').style.display = 'block';
-        document.getElementById('snow-container').style.display = 'block';
     }
 </script>
 </body>
