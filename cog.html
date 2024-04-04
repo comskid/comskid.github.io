@@ -12,7 +12,8 @@
     <style>
         /* Add glowing text effect to all text */
         body, a, button {
-            text-shadow: 0 0 10px #FCA7E4, 0 0 20px #FCA7E4, 0 0 30px #FCA7E4;
+            text-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 30px #FFFFFF;
+            color: #FFFFFF; /* Set text color to white */
         }
 
         /* Center align */
@@ -24,16 +25,21 @@
         .box {
             text-align: center;
             padding: 20px;
-            border: 1px solid #ccc;
+            border: 1px solid #ccc; /* Reverted to original color */
             border-radius: 10px;
             margin: 20px auto;
             width: 80%;
         }
 
         /* Styles for the troll text */
+        .cog-text {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        /* Styles for the troll text */
         .troll-text {
             font-size: 16px;
-            margin-top: 10px;
         }
 
         /* Styles for the clickable boxes */
@@ -48,9 +54,14 @@
             transform: scale(1.1);
         }
 
-        /* Glowing effect for PNG images */
-        .glow {
-            box-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff;
+        /* Glowing effect for social icons */
+        .social-icon {
+            filter: drop-shadow(0 0 10px #FFFFFF);
+            width: 35px;
+            height: 35px;
+            background-color: #FFFFFF;
+            border-radius: 50%;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -59,23 +70,23 @@
     <pre>
         <img class="pfp" src="img/pfdpp.jpg">
     </pre>
-    <h2 style="font-size: 20px;">Cog</h2> <!-- Bigger header -->
-    <p class="troll-text">Troll XD</p> <!-- Normal font size -->
+    <div class="cog-text">Cog</div> <!-- Bigger text -->
+    <div class="troll-text">Troll XD</div> <!-- Normal text size -->
 </div>
 
 <!-- Clickable boxes -->
 <div class="center">
     <div class="clickable-box" onclick="window.open('https://www.instagram.com/beeboycog', '_blank');">
-        <img src="logos/instagram.png" alt="Instagram" style="width: 35px; height: 35px;" class="glow"> <!-- Replace with your Instagram logo -->
+        <div class="social-icon" class="glow"></div> <!-- Replace with your Instagram logo -->
     </div>
     <div class="clickable-box" onclick="window.open('https://www.tiktok.com/@retainage', '_blank');">
-        <img src="logos/tiktok.png" alt="TikTok" style="width: 35px; height: 35px;" class="glow"> <!-- Replace with your TikTok logo -->
+        <div class="social-icon" class="glow"></div> <!-- Replace with your TikTok logo -->
     </div>
     <div class="clickable-box" onclick="window.open('https://discord.com/users/1204051161733144630', '_blank');">
-        <img src="logos/discord.png" alt="Discord" style="width: 35px; height: 35px;" class="glow"> <!-- Replace with your Discord logo -->
+        <div class="social-icon" class="glow"></div> <!-- Replace with your Discord logo -->
     </div>
     <div class="clickable-box" onclick="window.open('https://www.youtube.com/channel/trolling', '_blank');">
-        <img src="logos/youtube.png" alt="YouTube" style="width: 35px; height: 35px;" class="glow"> <!-- Replace with your YouTube logo -->
+        <div class="social-icon" class="glow"></div> <!-- Replace with your YouTube logo -->
     </div>
 </div>
 
