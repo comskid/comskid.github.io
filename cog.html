@@ -23,15 +23,16 @@
             left: 10px; /* Adjust the horizontal position as needed */
             color: white;
             font-size: 20px; /* Adjust the font size as needed */
-            animation: flowDown 5s linear infinite;
+            line-height: 1.5; /* Adjust the line height as needed */
+            animation: flowDown linear infinite;
         }
 
         @keyframes flowDown {
-            0% {
-                transform: translateY(-100%);
+            from {
+                transform: translateY(0);
             }
-            100% {
-                transform: translateY(100%);
+            to {
+                transform: translateY(calc(-100% + var(--text-height)));
             }
         }
     </style>
@@ -75,6 +76,7 @@ $$ |     $$  __$$ | $$ |$$\ $$ |  $$ |$$ |$$ |      $$ | \____$$\
 
 <!-- Separate section for flowing text -->
 <div class="flowing-text">
+    <!-- Add your lyrics here -->
     <p>I don't wanna talk, I just wanna get my dick sucked</p>
     <p>When I'm off the Xan, you can hear it in my hiccups</p>
     <p>Actin' like you got it, yeah you goin' get your shit took</p>
