@@ -97,11 +97,6 @@
             display: none;
         }
 
-        /* Show the site content */
-        #site.visible {
-            display: block;
-        }
-
         /* Hide snow container by default */
         #snow-container {
             display: none;
@@ -160,7 +155,7 @@ $$ |     $$  __$$ | $$ |$$\ $$ |  $$ |$$ |$$ |      $$ | \____$$\
 <div id="snow-container"></div>
 
 <!-- Site content -->
-<div id="site" class="visible">
+<div id="site">
     <!-- Your site content goes here -->
 </div>
 
@@ -187,21 +182,13 @@ $$ |     $$  __$$ | $$ |$$\ $$ |  $$ |$$ |$$ |      $$ | \____$$\
     });
 
     function playAudio() {
-        myAudio = new Audio('audio/cheer.mp3'); 
-        if (typeof myAudio.loop == 'boolean')
-        {
-            myAudio.loop = true;
-        }
-        else
-        {
-            myAudio.addEventListener('ended', function() {
-                this.currentTime = 0;
-                this.play();
-            }, false);
-        }
+        // Play audio
+        var myAudio = new Audio('audio/cheer.mp3'); 
         myAudio.play();
-        document.getElementById('site').classList.add('visible'); // Show the site content
-        document.getElementById('snow-container').style.display = 'inline-block'; // Show the snow container
+
+        // Show the site content and snow container
+        document.getElementById('site').style.display = 'block';
+        document.getElementById('snow-container').style.display = 'block';
     }
 </script>
 </body>
