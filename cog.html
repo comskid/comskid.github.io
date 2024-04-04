@@ -25,11 +25,13 @@
         .box {
             text-align: center;
             padding: 70px 0; /* Updated padding */
-            border: 1px solid #ccc; /* Reverted to original color */
             border-radius: 10px;
-            margin: 20px auto;
+            margin: auto; /* Center horizontally */
             width: 550px; /* Adjusted width */
-            position: relative; /* Position relative for absolute positioning of social icons */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center vertically */
         }
 
         /* Styles for the troll text */
@@ -93,7 +95,7 @@
 <body>
 <div>
     <div class="box">
-        <pre>
+        <pre style="display: flex; justify-content: center; align-items: center;">
             <img class="pfp" src="img/pfdpp.jpg" style="width: 140px; height: 140px;">
         </pre>
         <h2 class="cog-text">Cog</h2> <!-- Bigger text -->
