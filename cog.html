@@ -22,15 +22,33 @@
             left: 10px; /* Adjust the horizontal position as needed */
             color: white;
             font-size: 20px; /* Adjust the font size as needed */
-            animation: flowDown 5s linear infinite;
+            opacity: 0; /* Initially hide the text */
+            animation: flowDown 30s linear infinite; /* Adjust the animation duration */
         }
 
         @keyframes flowDown {
             0% {
-                transform: translateY(-100%);
+                opacity: 1;
+                transform: translateY(-100%) translateX(0);
+            }
+            5% {
+                opacity: 1;
+                transform: translateY(0) translateX(5%);
+            }
+            45% {
+                opacity: 1;
+                transform: translateY(0) translateX(-5%);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(100%) translateX(0);
+            }
+            95% {
+                opacity: 1;
             }
             100% {
-                transform: translateY(100%);
+                opacity: 0;
+                transform: translateY(200%) translateX(0);
             }
         }
     </style>
@@ -74,18 +92,24 @@ $$ |     $$  __$$ | $$ |$$\ $$ |  $$ |$$ |$$ |      $$ | \____$$\
 
 <!-- Separate section for flowing text -->
 <div class="flowing-text">
-    <p>I don't wanna talk, I just wanna get my dick sucked</p>
-    <p>When I'm off the Xan, you can hear it in my hiccups</p>
-    <p>Actin' like you got it, yeah you goin' get your shit took</p>
-    <p>My bro got the bag, but he don't carry no textbook</p>
-    <p>My bro got the bag, he got thirty clips and ghost guns</p>
-    <p>We been snappin' thirties, me and bro been on a dope run</p>
-    <p>Slid another thirty, off the thirty, boy so dumb</p>
-    <p>Opps steady slyin', said we smoke, we didn't smoke nun'</p>
-    <p>I be gettin' fried off the coke and Oxycodones</p>
-    <p>We both swag, doin' drugs all alone</p>
-    <p>Weed and wax, now I feel so strong</p>
-    <p>Bitches throwin' ass, and this cash on the floor</p>
+    <!-- Add your lyrics here -->
+    <p>what could i have done wrong? ive done everything for you.</p>
+    <p>what could i have done wrong? ive done everything for you.</p>
+    <p>what could i have done wrong? ive done everything for you.</p>
+    <p>what could i have done wrong? ive done everything for you.</p>
+    <p>what could i have done wrong? ive done everything for you.</p>
+    <p>what could i have done wrong? ive done everything for you.</p>
+    <p>what could i have done wrong? ive done everything for you.</p>
+    <p>what could i have done wrong? ive done everything for you.</p>
+    <p>what could i have done wrong? ive done everything for you.</p>
+    <p>what could i have done wrong? ive done everything for you.</p>
+    <p>what could i have done wrong? ive done everything for you.</p>
+    <p>what could i have done wrong? ive done everything for you.</p>
+    <p>what could i have done wrong? ive done everything for you.</p>
+    <p>what could i have done wrong? ive done everything for you.</p>
+    <p>what could i have done wrong? ive done everything for you.</p>
+    <p>what could i have done wrong? ive done everything for you.</p>
+    
 </div>
 
 <script>
@@ -109,7 +133,8 @@ $$ |     $$  __$$ | $$ |$$\ $$ |  $$ |$$ |$$ |      $$ | \____$$\
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
     });
-    document.getElementById('site').hidden=true
+    document.getElementById('site').hidden=true;
+    
     function playAudio() {
         myAudio = new Audio('audio/cheer.mp3'); 
         if (typeof myAudio.loop == 'boolean')
