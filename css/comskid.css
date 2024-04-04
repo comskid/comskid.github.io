@@ -55,29 +55,43 @@ a {
     left: 50%;
 }
 
-    .ascii {
-        display: flex;
-        top: 7%;
-        position: absolute;
-        font-family: 'Roboto', sans-serif;
-        color: white
-    }
+.ascii {
+    display: flex;
+    top: 7%;
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    z-index: 1; /* Ensure it's on top of other elements */
+}
 
-    .linksnshit {
-        top: 50%;
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        margin-top: 2px;
-    }
+.linksnshit {
+    top: 50%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 2px;
+}
 
-    .pfp {
-        border-radius: 50%;
-        width: 140px;
-        height: 140px;
-        top: 7%;
-        left: 36%;
-        border: 0px solid #ffffff;
-        position: absolute;
-    }
+.pfp {
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    top: 7%;
+    left: 36%;
+    border: 0px solid #ffffff;
+    position: absolute;
+}
+
+/* Styles for social icons */
+.social-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9); /* White with transparency */
+    box-shadow: 0 0 10px #FFFFFF; /* Glowing effect */
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
