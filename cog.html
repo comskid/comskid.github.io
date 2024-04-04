@@ -9,6 +9,99 @@
     <meta name="theme-color" content="#2B2D31">
     <link href="css/comskid.css" rel="stylesheet">
     <script src="js/snowstorm.js"></script>
+    <style>
+        /* Add glowing text effect to all text */
+        body, a, button, p {
+            text-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 30px #FFFFFF;
+            color: #FFFFFF; /* Set text color to white */
+        }
+
+        /* Center align */
+        .center {
+            text-align: center;
+        }
+
+        /* Styles for boxes */
+        .box {
+            text-align: center;
+            padding: 70px 0; /* Updated padding */
+            border-radius: 25px;
+            margin: auto; /* Center horizontally */
+            width: 550px; /* Adjusted width */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center vertically */
+            border: none; /* Removed border */
+        }
+
+        /* Styles for the troll text */
+        .cog-text {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        /* Styles for the troll text */
+        .troll-text {
+            font-size: 16px;
+        }
+
+        /* Styles for the clickable boxes */
+        .clickable-box {
+            display: inline-block;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .clickable-box:hover {
+            transform: scale(1.1);
+        }
+
+        /* Glowing effect for social icons */
+        .social-icon {
+            width: 35px;
+            height: 35px;
+            margin: 5px;
+        }
+
+        /* ASCI Click to enter */
+        #button {
+            color: #FFFFFF;
+            font-family: 'Courier New', Courier, monospace;
+            border: none;
+            margin: 0;
+            background-color: #000000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            z-index: 1; /* Ensure it's above other elements */
+        }
+
+        /* ASCI Click to enter hover effect */
+        #button:hover {
+            background-color: #111;
+        }
+
+        /* Hide button text */
+        #button pre {
+            visibility: hidden;
+        }
+
+        /* Hide the site content by default */
+        #site {
+            display: none;
+        }
+
+        /* Show the site content */
+        #site.visible {
+            display: block;
+        }
+    </style>
 </head>
 <body>
 <div>
@@ -34,11 +127,13 @@
                 <img src="logos/youtube_white.png" alt="YouTube" class="social-icon glow">
             </div>
         </div>
+    </div>
+</div>
 
-        <!-- ASCII Click to enter -->
-        <button id="button" onclick="playAudio();document.getElementById('button').hidden=true;document.getElementById('site').hidden=false">   
-            <div class="center">
-                <pre class="ascii">
+<!-- ASCI Click to enter -->
+<button id="button" onclick="playAudio()">   
+    <div class="center">
+        <pre>
 
                             $$\               $$\           $$\           
                             $$ |              \__|          $$ |          
@@ -52,10 +147,17 @@
                                     \$$$$$$  |                            
                                      \______/                             
 
-                                      Click To Continue To The Site.                             
-                </pre>
-            </div>
-        </button>
+                                      Click To Continue To The Site.                          
+        </pre>
+    </div>
+</button>
+
+<!-- Site content -->
+<div id="site" class="visible">
+    <div class="textcontainer">
+        <p>Welcome to Catgirls Wiki!</p>
+        <p>Here you'll find information about cute catgirls and related topics.</p>
+        <p>Check out our <a href="#">About</a> page to learn more.</p>
     </div>
 </div>
 
@@ -80,7 +182,6 @@
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
     });
-    document.getElementById('site').hidden=true
     function playAudio() {
         myAudio = new Audio('audio/cheer.mp3'); 
         if (typeof myAudio.loop == 'boolean')
@@ -95,6 +196,7 @@
             }, false);
         }
         myAudio.play();
+        document.getElementById('site').classList.add('visible'); // Show the site content
     }
 </script>
 </body>
