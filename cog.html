@@ -28,7 +28,7 @@
             border: 1px solid #ccc; /* Reverted to original color */
             border-radius: 10px;
             margin: 20px auto;
-            width: 80%;
+            width: 60%; /* Adjusted width */
         }
 
         /* Styles for the troll text */
@@ -59,34 +59,86 @@
             filter: drop-shadow(0 0 10px #FFFFFF);
             width: 35px;
             height: 35px;
-            background-color: #FFFFFF;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
             border-radius: 50%;
             margin-bottom: 10px;
+        }
+
+        /* ASCI Click to enter */
+        #button {
+            color: hwb(0 100% 0%);
+            font-family: 'Courier New', Courier, monospace;
+            border: none;
+            margin: 0;
+            background-color: #000000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+        }
+
+        /* ASCI Click to enter hover effect */
+        #button:hover {
+            background-color: #111;
+        }
+
+        /* Hide button text */
+        #button pre {
+            visibility: hidden;
         }
     </style>
 </head>
 <body>
-<div class="box">
-    <pre>
-        <img class="pfp" src="img/pfdpp.jpg">
-    </pre>
-    <div class="cog-text">Cog</div> <!-- Bigger text -->
-    <div class="troll-text">Troll XD</div> <!-- Normal text size -->
+<div>
+    <div class="box">
+        <pre>
+            <img class="pfp" src="img/pfdpp.jpg">
+        </pre>
+        <h2 class="cog-text">Cog</h2> <!-- Bigger text -->
+        <p class="troll-text">Troll XD</p> <!-- Normal text size -->
+    </div>
 </div>
+
+<!-- ASCI Click to enter -->
+<button id="button" onclick="playAudio();document.getElementById('button').hidden=true;document.getElementById('site').hidden=false">   
+    <div class="center">
+        <pre>
+
+                    $$\               $$\           $$\           
+                    $$ |              \__|          $$ |          
+ $$$$$$$\ $$$$$$\ $$$$$$\    $$$$$$\  $$\  $$$$$$\  $$ | $$$$$$$\ 
+$$  _____|\____$$\\_$$  _|  $$  __$$\ $$ |$$  __$$\ $$ |$$  _____|
+$$ /      $$$$$$$ | $$ |    $$ /  $$ |$$ |$$ |  \__|$$ |\$$$$$$\  
+$$ |     $$  __$$ | $$ |$$\ $$ |  $$ |$$ |$$ |      $$ | \____$$\ 
+\$$$$$$$\\$$$$$$$ | \$$$$  |\$$$$$$$ |$$ |$$ |      $$ |$$$$$$$  |
+ \_______|\_______|  \____/  \____$$ |\__|\__|      \__|\_______/ 
+                            $$\   $$ |                            
+                            \$$$$$$  |                            
+                             \______/                             
+
+                              Click To Continue To The Site.                             
+        </pre>
+    </div>
+</button>
 
 <!-- Clickable boxes -->
 <div class="center">
     <div class="clickable-box" onclick="window.open('https://www.instagram.com/beeboycog', '_blank');">
-        <div class="social-icon" class="glow"></div> <!-- Replace with your Instagram logo -->
+        <div class="social-icon" style="background-image: url('logos/instagram.png');" class="glow"></div> <!-- Instagram logo -->
     </div>
     <div class="clickable-box" onclick="window.open('https://www.tiktok.com/@retainage', '_blank');">
-        <div class="social-icon" class="glow"></div> <!-- Replace with your TikTok logo -->
+        <div class="social-icon" style="background-image: url('logos/tiktok.png');" class="glow"></div> <!-- TikTok logo -->
     </div>
     <div class="clickable-box" onclick="window.open('https://discord.com/users/1204051161733144630', '_blank');">
-        <div class="social-icon" class="glow"></div> <!-- Replace with your Discord logo -->
+        <div class="social-icon" style="background-image: url('logos/discord.png');" class="glow"></div> <!-- Discord logo -->
     </div>
     <div class="clickable-box" onclick="window.open('https://www.youtube.com/channel/trolling', '_blank');">
-        <div class="social-icon" class="glow"></div> <!-- Replace with your YouTube logo -->
+        <div class="social-icon" style="background-image: url('logos/youtube.png');" class="glow"></div> <!-- YouTube logo -->
     </div>
 </div>
 
