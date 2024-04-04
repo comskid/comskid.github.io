@@ -101,6 +101,11 @@
         #site.visible {
             display: block;
         }
+
+        /* Hide snow container by default */
+        #snow-container {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -134,31 +139,29 @@
 <button id="button" onclick="playAudio()">   
     <div class="center">
         <pre>
+            $$\               $$\           $$\           
+            $$ |              \__|          $$ |          
+ $$$$$$$\ $$$$$$\ $$$$$$\    $$$$$$\  $$\  $$$$$$\  $$ | $$$$$$$\ 
+$$  _____|\____$$\\_$$  _|  $$  __$$\ $$ |$$  __$$\ $$ |$$  _____|
+$$ /      $$$$$$$ | $$ |    $$ /  $$ |$$ |$$ |  \__|$$ |\$$$$$$\  
+$$ |     $$  __$$ | $$ |$$\ $$ |  $$ |$$ |$$ |      $$ | \____$$\ 
+\$$$$$$$\\$$$$$$$ | \$$$$  |\$$$$$$$ |$$ |$$ |      $$ |$$$$$$$  |
+ \_______|\_______|  \____/  \____$$ |\__|\__|      \__|\_______/ 
+                            $$\   $$ |                            
+                            \$$$$$$  |                            
+                             \______/                             
 
-                            $$\               $$\           $$\           
-                            $$ |              \__|          $$ |          
-         $$$$$$$\ $$$$$$\ $$$$$$\    $$$$$$\  $$\  $$$$$$\  $$ | $$$$$$$\ 
-        $$  _____|\____$$\\_$$  _|  $$  __$$\ $$ |$$  __$$\ $$ |$$  _____|
-        $$ /      $$$$$$$ | $$ |    $$ /  $$ |$$ |$$ |  \__|$$ |\$$$$$$\  
-        $$ |     $$  __$$ | $$ |$$\ $$ |  $$ |$$ |$$ |      $$ | \____$$\ 
-        \$$$$$$$\\$$$$$$$ | \$$$$  |\$$$$$$$ |$$ |$$ |      $$ |$$$$$$$  |
-         \_______|\_______|  \____/  \____$$ |\__|\__|      \__|\_______/ 
-                                    $$\   $$ |                            
-                                    \$$$$$$  |                            
-                                     \______/                             
-
-                                      Click To Continue To The Site.                          
+                              Click To Continue To The Site.                             
         </pre>
     </div>
 </button>
 
+<!-- Snow container -->
+<div id="snow-container"></div>
+
 <!-- Site content -->
 <div id="site" class="visible">
-    <div class="textcontainer">
-        <p>Welcome to Catgirls Wiki!</p>
-        <p>Here you'll find information about cute catgirls and related topics.</p>
-        <p>Check out our <a href="#">About</a> page to learn more.</p>
-    </div>
+    <!-- Your site content goes here -->
 </div>
 
 <script>
@@ -182,6 +185,7 @@
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
     });
+
     function playAudio() {
         myAudio = new Audio('audio/cheer.mp3'); 
         if (typeof myAudio.loop == 'boolean')
@@ -197,6 +201,7 @@
         }
         myAudio.play();
         document.getElementById('site').classList.add('visible'); // Show the site content
+        document.getElementById('snow-container').style.display = 'inline-block'; // Show the snow container
     }
 </script>
 </body>
