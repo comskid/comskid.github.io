@@ -25,11 +25,10 @@
         .box {
             text-align: center;
             padding: 20px;
-            border: 1px solid #ccc; /* Adjusted border color */
+            border: 1px solid #ccc; /* Reverted to original color */
             border-radius: 10px;
             margin: 20px auto;
             width: 60%; /* Adjusted width */
-            background-color: #2B2D31; /* Set background color */
         }
 
         /* Styles for the troll text */
@@ -57,41 +56,15 @@
 
         /* Glowing effect for social icons */
         .social-icon {
-            filter: drop-shadow(0 0 10px #FFFFFF);
             width: 35px;
             height: 35px;
-            background-color: #FFFFFF; /* Set background color */
             border-radius: 50%;
-            margin-bottom: 10px;
+            background-color: rgba(255, 255, 255, 0.9); /* White with transparency */
+            box-shadow: 0 0 10px #FFFFFF; /* Glowing effect */
+            margin: 5px;
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-
-        /* ASCI Click to enter */
-        #button {
-            color: hwb(0 100% 0%);
-            font-family: 'Courier New', Courier, monospace;
-            border: none;
-            margin: 0;
-            background-color: #000000;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-        }
-
-        /* ASCI Click to enter hover effect */
-        #button:hover {
-            background-color: #111;
-        }
-
-        /* Hide button text */
-        #button pre {
-            visibility: hidden;
         }
     </style>
 </head>
@@ -131,16 +104,16 @@ $$ |     $$  __$$ | $$ |$$\ $$ |  $$ |$$ |$$ |      $$ | \____$$\
 <!-- Clickable boxes -->
 <div class="center">
     <div class="clickable-box" onclick="window.open('https://www.instagram.com/beeboycog', '_blank');">
-        <div class="social-icon glow">IG</div> <!-- Instagram logo -->
+        <div class="social-icon glow">IG</div> <!-- Instagram icon -->
     </div>
     <div class="clickable-box" onclick="window.open('https://www.tiktok.com/@retainage', '_blank');">
-        <div class="social-icon glow">TT</div> <!-- TikTok logo -->
+        <div class="social-icon glow">TT</div> <!-- TikTok icon -->
     </div>
     <div class="clickable-box" onclick="window.open('https://discord.com/users/1204051161733144630', '_blank');">
-        <div class="social-icon glow">DC</div> <!-- Discord logo -->
+        <div class="social-icon glow">DC</div> <!-- Discord icon -->
     </div>
     <div class="clickable-box" onclick="window.open('https://www.youtube.com/channel/trolling', '_blank');">
-        <div class="social-icon glow">YT</div> <!-- YouTube logo -->
+        <div class="social-icon glow">YT</div> <!-- YouTube icon -->
     </div>
 </div>
 
