@@ -11,36 +11,8 @@
     <script src="js/snowstorm.js"></script>
     <style>
         /* Add glowing text effect to all text */
-        body, a, button, .flowing-text {
+        body, a, button {
             text-shadow: 0 0 10px #FCA7E4, 0 0 20px #FCA7E4, 0 0 30px #FCA7E4;
-        }
-
-        /* Style for the separate section of flowing text */
-        .flowing-text {
-            position: absolute;
-            top: 10%; /* Adjust the vertical position as needed */
-            left: 10px; /* Adjust the horizontal position as needed */
-            color: white;
-            font-size: 20px; /* Adjust the font size as needed */
-            opacity: 0; /* Initially hide the text */
-            animation: flowDown 30s linear infinite; /* Adjust the animation duration */
-        }
-
-        @keyframes flowDown {
-            0% {
-                opacity: 1;
-                transform: translateY(-100%);
-            }
-            5% {
-                opacity: 1;
-            }
-            95% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-                transform: translateY(100%);
-            }
         }
     </style>
 </head>
@@ -81,28 +53,6 @@ $$ |     $$  __$$ | $$ |$$\ $$ |  $$ |$$ |$$ |      $$ | \____$$\
     </button>
 </div>
 
-<!-- Separate section for flowing text -->
-<div class="flowing-text">
-    <!-- Add your lyrics here -->
-    <p>what could i have done wrong? ive done everything for you.</p>
-    <p>what could i have done wrong? ive done everything for you.</p>
-    <p>what could i have done wrong? ive done everything for you.</p>
-    <p>what could i have done wrong? ive done everything for you.</p>
-    <p>what could i have done wrong? ive done everything for you.</p>
-    <p>what could i have done wrong? ive done everything for you.</p>
-    <p>what could i have done wrong? ive done everything for you.</p>
-    <p>what could i have done wrong? ive done everything for you.</p>
-    <p>what could i have done wrong? ive done everything for you.</p>
-    <p>what could i have done wrong? ive done everything for you.</p>
-    <p>what could i have done wrong? ive done everything for you.</p>
-    <p>what could i have done wrong? ive done everything for you.</p>
-    <p>what could i have done wrong? ive done everything for you.</p>
-    <p>what could i have done wrong? ive done everything for you.</p>
-    <p>what could i have done wrong? ive done everything for you.</p>
-    <p>what could i have done wrong? ive done everything for you.</p>
-    
-</div>
-
 <script>
     document.onkeydown = function(e) {
         if(event.keyCode == 123) {
@@ -124,8 +74,7 @@ $$ |     $$  __$$ | $$ |$$\ $$ |  $$ |$$ |$$ |      $$ | \____$$\
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
     });
-    document.getElementById('site').hidden=true;
-    
+    document.getElementById('site').hidden=true
     function playAudio() {
         myAudio = new Audio('audio/cheer.mp3'); 
         if (typeof myAudio.loop == 'boolean')
