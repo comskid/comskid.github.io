@@ -25,10 +25,11 @@
         .box {
             text-align: center;
             padding: 20px;
-            border: 1px solid #2B2D31; /* Adjusted border color */
+            border: 1px solid #ccc; /* Adjusted border color */
             border-radius: 10px;
             margin: 20px auto;
             width: 60%; /* Adjusted width */
+            background-color: #2B2D31; /* Set background color */
         }
 
         /* Styles for the troll text */
@@ -59,11 +60,12 @@
             filter: drop-shadow(0 0 10px #FFFFFF);
             width: 35px;
             height: 35px;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
+            background-color: #FFFFFF; /* Set background color */
             border-radius: 50%;
             margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         /* ASCI Click to enter */
@@ -129,16 +131,16 @@ $$ |     $$  __$$ | $$ |$$\ $$ |  $$ |$$ |$$ |      $$ | \____$$\
 <!-- Clickable boxes -->
 <div class="center">
     <div class="clickable-box" onclick="window.open('https://www.instagram.com/beeboycog', '_blank');">
-        <div class="social-icon" style="background-image: url('logos/instagram.png');"></div> <!-- Instagram logo -->
+        <div class="social-icon glow">IG</div> <!-- Instagram logo -->
     </div>
     <div class="clickable-box" onclick="window.open('https://www.tiktok.com/@retainage', '_blank');">
-        <div class="social-icon" style="background-image: url('logos/tiktok.png');"></div> <!-- TikTok logo -->
+        <div class="social-icon glow">TT</div> <!-- TikTok logo -->
     </div>
     <div class="clickable-box" onclick="window.open('https://discord.com/users/1204051161733144630', '_blank');">
-        <div class="social-icon" style="background-image: url('logos/discord.png');"></div> <!-- Discord logo -->
+        <div class="social-icon glow">DC</div> <!-- Discord logo -->
     </div>
     <div class="clickable-box" onclick="window.open('https://www.youtube.com/channel/trolling', '_blank');">
-        <div class="social-icon" style="background-image: url('logos/youtube.png');"></div> <!-- YouTube logo -->
+        <div class="social-icon glow">YT</div> <!-- YouTube logo -->
     </div>
 </div>
 
