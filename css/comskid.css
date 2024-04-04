@@ -13,6 +13,8 @@ body {
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
+    align-items: center; /* Center align content horizontally */
+    justify-content: center; /* Center align content vertically */
 }
 
 .textcontainer {
@@ -40,8 +42,6 @@ a {
 .box {
     width: 550px; 
     height: 350px;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
     font-family: 'Roboto', sans-serif;
     border-radius: 25px;
     display: flex;
@@ -51,34 +51,32 @@ a {
     box-shadow: 0 0 10px rgb(0, 0, 0);
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    position: relative; /* Change absolute to relative */
 }
 
 .ascii {
     display: flex;
-    top: 7%;
     position: absolute;
+    top: 7%;
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
     font-family: 'Roboto', sans-serif;
     color: white;
 }
 
 .linksnshit {
-    top: 50%;
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin-top: 2px;
 }
 
 .pfp {
     border-radius: 50%;
     width: 140px;
     height: 140px;
-    top: 7%;
-    left: 36%;
     border: 1px solid #ffffff;
-    position: absolute;
 }
