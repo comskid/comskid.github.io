@@ -28,11 +28,11 @@
             border-radius: 25px;
             margin: auto; /* Center horizontally */
             width: 550px; /* Adjusted width */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center vertically */
             border: none; /* Removed border */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
         }
 
         /* Styles for the troll text */
@@ -64,17 +64,28 @@
             height: 35px;
             margin: 5px;
         }
+
+        /* Styles for the button */
+        #button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1; /* Ensure it's above other elements */
+        }
     </style>
 </head>
 <body>
 <div>
     <div class="box">
-        <img class="pfp" src="img/pfdpp.jpg" style="width: 140px; height: 140px;">
+        <pre style="display: flex; justify-content: center; align-items: center;">
+            <img class="pfp" src="img/pfdpp.jpg" style="width: 140px; height: 140px;">
+        </pre>
         <h2 class="cog-text">Cog</h2> <!-- Bigger text -->
         <p class="troll-text">Troll XD</p> <!-- Normal text size -->
 
         <!-- Social icons -->
-        <div class="center">
+        <div class="center" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);">
             <div class="clickable-box" onclick="window.open('https://www.instagram.com/beeboycog', '_blank');">
                 <img src="logos/instagram_white.png" alt="Instagram" class="social-icon glow">
             </div>
@@ -114,31 +125,23 @@
 </button>
 
 <script>
-    document.onkeydown = function(e) {
-        if(event.keyCode == 123) {
-            return false;
-        }
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-            return false;
-        }
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-            return false;
-        }
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-            return false;
-        }
-        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-            return false;
-        }
-    }
-    document.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-    });
+    var audioPlaying = false; // Flag to track if audio is already playing
 
     function playAudio() {
-        // Play audio
-        var myAudio = new Audio('audio/cheer.mp3'); 
-        myAudio.play();
+        // Check if audio is already playing
+        if (!audioPlaying) {
+            // Play audio
+            var myAudio = new Audio('audio/cheer.mp3'); 
+            myAudio.play();
+            
+            // Set audioPlaying flag to true
+            audioPlaying = true;
+
+            // Set a timeout to reset the audioPlaying flag after the audio finishes
+            myAudio.onended = function() {
+                audioPlaying = false;
+            };
+        }
     }
 </script>
 </body>
