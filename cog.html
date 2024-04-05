@@ -12,7 +12,7 @@
     <style>
         /* General styles */
         body {
-            background-color: #000000;
+            background-color: black; /* Initial background color */
             color: #FFFFFF;
             font-family: 'Courier New', Courier, monospace;
             text-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 30px #FFFFFF;
@@ -111,9 +111,14 @@
             text-align: center; /* Center align the text */
         }
 
-        /* Hide button text */
+        /* Show button text initially */
         #button pre {
-            visibility: hidden;
+            visibility: visible;
+        }
+
+        /* Hide site content initially */
+        #site-content {
+            display: none;
         }
     </style>
 </head>
@@ -185,6 +190,7 @@
         myAudio.play();
         document.getElementById('button').hidden = true;
         document.getElementById('site-content').style.display = 'block';
+        document.body.style.backgroundColor = ''; // Reset background color
     }
 </script>
 </body>
