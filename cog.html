@@ -33,6 +33,7 @@
             left: 50%;
             transform: translate(-50%, -50%); /* Center vertically */
             border: none; /* Removed border */
+            display: none; /* Initially hide */
         }
 
         /* Styles for the troll text */
@@ -64,40 +65,29 @@
             height: 35px;
             margin: 5px;
         }
-
-        /* Styles for the button */
-        #button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1; /* Ensure it's above other elements */
-        }
     </style>
 </head>
 <body>
-<div>
-    <div class="box">
-        <pre style="display: flex; justify-content: center; align-items: center;">
-            <img class="pfp" src="img/pfdpp.jpg" style="width: 140px; height: 140px;">
-        </pre>
-        <h2 class="cog-text">Cog</h2> <!-- Bigger text -->
-        <p class="troll-text">Troll XD</p> <!-- Normal text size -->
+<div class="box" id="site-content">
+    <pre style="display: flex; justify-content: center; align-items: center;">
+        <img class="pfp" src="img/pfdpp.jpg" style="width: 140px; height: 140px;">
+    </pre>
+    <h2 class="cog-text">Cog</h2> <!-- Bigger text -->
+    <p class="troll-text">Troll XD</p> <!-- Normal text size -->
 
-        <!-- Social icons -->
-        <div class="center" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);">
-            <div class="clickable-box" onclick="window.open('https://www.instagram.com/beeboycog', '_blank');">
-                <img src="logos/instagram_white.png" alt="Instagram" class="social-icon glow">
-            </div>
-            <div class="clickable-box" onclick="window.open('https://www.tiktok.com/@retainage', '_blank');">
-                <img src="logos/tiktok_white.png" alt="TikTok" class="social-icon glow">
-            </div>
-            <div class="clickable-box" onclick="window.open('https://discord.com/users/1204051161733144630', '_blank');">
-                <img src="logos/discord_white.png" alt="Discord" class="social-icon glow">
-            </div>
-            <div class="clickable-box" onclick="window.open('https://www.youtube.com/channel/trolling', '_blank');">
-                <img src="logos/youtube_white.png" alt="YouTube" class="social-icon glow">
-            </div>
+    <!-- Social icons -->
+    <div class="center" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);">
+        <div class="clickable-box" onclick="window.open('https://www.instagram.com/beeboycog', '_blank');">
+            <img src="logos/instagram_white.png" alt="Instagram" class="social-icon glow">
+        </div>
+        <div class="clickable-box" onclick="window.open('https://www.tiktok.com/@retainage', '_blank');">
+            <img src="logos/tiktok_white.png" alt="TikTok" class="social-icon glow">
+        </div>
+        <div class="clickable-box" onclick="window.open('https://discord.com/users/1204051161733144630', '_blank');">
+            <img src="logos/discord_white.png" alt="Discord" class="social-icon glow">
+        </div>
+        <div class="clickable-box" onclick="window.open('https://www.youtube.com/channel/trolling', '_blank');">
+            <img src="logos/youtube_white.png" alt="YouTube" class="social-icon glow">
         </div>
     </div>
 </div>
@@ -107,19 +97,19 @@
     <div class="center">
         <pre>
 
-                            $$\               $$\           $$\           
-                            $$ |              \__|          $$ |          
-         $$$$$$$\ $$$$$$\ $$$$$$\    $$$$$$\  $$\  $$$$$$\  $$ | $$$$$$$\ 
-        $$  _____|\____$$\\_$$  _|  $$  __$$\ $$ |$$  __$$\ $$ |$$  _____|
-        $$ /      $$$$$$$ | $$ |    $$ /  $$ |$$ |$$ |  \__|$$ |\$$$$$$\  
-        $$ |     $$  __$$ | $$ |$$\ $$ |  $$ |$$ |$$ |      $$ | \____$$\ 
-        \$$$$$$$\\$$$$$$$ | \$$$$  |\$$$$$$$ |$$ |$$ |      $$ |$$$$$$$  |
-         \_______|\_______|  \____/  \____$$ |\__|\__|      \__|\_______/ 
-                                    $$\   $$ |                            
-                                    \$$$$$$  |                            
-                                     \______/                             
+                        $$\               $$\           $$\           
+                        $$ |              \__|          $$ |          
+     $$$$$$$\ $$$$$$\ $$$$$$\    $$$$$$\  $$\  $$$$$$\  $$ | $$$$$$$\ 
+    $$  _____|\____$$\\_$$  _|  $$  __$$\ $$ |$$  __$$\ $$ |$$  _____|
+    $$ /      $$$$$$$ | $$ |    $$ /  $$ |$$ |$$ |  \__|$$ |\$$$$$$\  
+    $$ |     $$  __$$ | $$ |$$\ $$ |  $$ |$$ |$$ |      $$ | \____$$\ 
+    \$$$$$$$\\$$$$$$$ | \$$$$  |\$$$$$$$ |$$ |$$ |      $$ |$$$$$$$  |
+     \_______|\_______|  \____/  \____$$ |\__|\__|      \__|\_______/ 
+                                $$\   $$ |                            
+                                \$$$$$$  |                            
+                                 \______/                             
 
-                                      Click To Continue To The Site.          
+                                  Click To Continue To The Site.          
         </pre>
     </div>
 </button>
@@ -141,6 +131,9 @@
             myAudio.onended = function() {
                 audioPlaying = false;
             };
+
+            // Show the site content
+            document.getElementById('site-content').style.display = 'block';
         }
     }
 </script>
