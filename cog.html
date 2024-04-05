@@ -18,6 +18,7 @@
             text-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 30px #FFFFFF;
             margin: 0;
             padding: 0;
+            position: relative; /* Ensure absolute positioning works relative to the body */
         }
 
         /* Center align */
@@ -41,11 +42,18 @@
         /* Text styles */
         .cog-text {
             font-size: 24px;
-            margin-bottom: 10px;
+            position: absolute; /* Position absolutely */
+            top: 180px; /* Adjust top position as needed */
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .troll-text {
             font-size: 16px;
+            position: absolute; /* Position absolutely */
+            top: 220px; /* Adjust top position as needed */
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         /* Clickable box styles */
@@ -93,12 +101,8 @@
     <pre class="center">
         <img class="pfp" src="img/pfdpp.jpg" style="width: 140px; height: 140px;">
     </pre>
-    <div class="center">
-        <div class="text-container">
-            <h2 class="cog-text">Cog</h2>
-            <p class="troll-text">Troll XD</p>
-        </div>
-    </div>
+    <h2 class="cog-text center">Cog</h2>
+    <p class="troll-text center">Troll XD</p>
 
     <div class="center">
         <div class="clickable-box" onclick="window.open('https://www.instagram.com/beeboycog', '_blank');">
