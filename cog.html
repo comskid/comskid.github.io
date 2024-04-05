@@ -65,6 +65,36 @@
             height: 35px;
             margin: 5px;
         }
+
+        /* Set background color to black */
+        body {
+            background-color: #000000;
+        }
+
+        /* Styles for full-screen ASCII art */
+        #button {
+            color: hwb(0 100% 0%);
+            font-family: 'Courier New', Courier, monospace;
+            border: none;
+            margin: 0;
+            background-color: #000000;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1; /* Ensure it's above other elements */
+        }
+
+        /* ASCI Click to enter hover effect */
+        #button:hover {
+            background-color: #111;
+        }
+
+        /* Hide button text */
+        #button pre {
+            visibility: hidden;
+        }
     </style>
 </head>
 <body>
@@ -92,10 +122,9 @@
     </div>
 <div>
 
-<div>
-  <button id="button" style="color:hwb(0 100% 0%); font-family:'Courier New', Courier, monospace; border: none; margin: 0; background-color: #000000; position: absolute; top: 50%;left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); width: 100%; height: 100%;" onclick="playAudio();document.getElementById('button').hidden=true;document.getElementById('site').hidden=false">   
-<div class="center">
-<pre>
+<button id="button" onclick="playAudio();document.getElementById('button').hidden=true;document.getElementById('site-content').style.display='block';">
+    <div class="center">
+        <pre>
 
                         $$\               $$\           $$\           
                         $$ |              \__|          $$ |          
@@ -110,46 +139,35 @@
                                  \______/                             
 
                                   Click To Continue To The Site. 
-</button>
-</pre>
+        </pre>
     </div>
- 
-       </div>
-  <script>
+</button>
+
+<script>
     document.onkeydown = function(e) {
-    if(event.keyCode == 123) {
-        return false;
-    }
-    if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-        return false;
-    }
-    if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-        return false;
-    }
-    if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-        return false;
-    }
-    if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-        return false;
-    }
+        if(event.keyCode == 123) {
+            return false;
+        }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+            return false;
+        }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+            return false;
+        }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+            return false;
+        }
+        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+            return false;
+        }
     }
     document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
+        e.preventDefault();
     });
-    document.getElementById('site').hidden=true
+
     function playAudio() {
-        myAudio = new Audio('audio/cheer.mp3'); 
-        if (typeof myAudio.loop == 'boolean')
-        {
-            myAudio.loop = true;
-        }
-        else
-        {
-            myAudio.addEventListener('ended', function() {
-                this.currentTime = 0;
-                this.play();
-            }, false);
-        }
+        // Play audio
+        var myAudio = new Audio('audio/cheer.mp3'); 
         myAudio.play();
     }
 </script>
