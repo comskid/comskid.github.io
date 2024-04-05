@@ -37,13 +37,24 @@
             padding: 70px 20px; /* Adjusted padding */
             border-radius: 25px;
             border: none;
+            overflow: auto; /* Enable scrolling if needed */
+        }
+
+        /* Profile picture styles */
+        .pfp {
+            position: absolute;
+            top: 10px; /* Adjust top position as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 140px;
         }
 
         /* Text styles */
         .cog-text {
             font-size: 24px;
             position: absolute; /* Position absolutely */
-            top: 180px; /* Adjust top position as needed */
+            top: 160px; /* Adjust top position as needed */
             left: 50%;
             transform: translateX(-50%);
         }
@@ -51,7 +62,7 @@
         .troll-text {
             font-size: 16px;
             position: absolute; /* Position absolutely */
-            top: 220px; /* Adjust top position as needed */
+            top: 190px; /* Adjust top position as needed */
             left: 50%;
             transform: translateX(-50%);
         }
@@ -69,6 +80,13 @@
         }
 
         /* Social icon styles */
+        .social-icons {
+            position: absolute;
+            bottom: 20px; /* Adjust bottom position as needed */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
         .social-icon {
             width: 35px;
             height: 35px;
@@ -98,13 +116,11 @@
 </head>
 <body>
 <div class="box" id="site-content">
-    <pre class="center">
-        <img class="pfp" src="img/pfdpp.jpg" style="width: 140px; height: 140px;">
-    </pre>
+    <img class="pfp" src="img/pfdpp.jpg" alt="Profile Picture">
     <h2 class="cog-text center">Cog</h2>
     <p class="troll-text center">Troll XD</p>
 
-    <div class="center">
+    <div class="social-icons center">
         <div class="clickable-box" onclick="window.open('https://www.instagram.com/beeboycog', '_blank');">
             <img src="logos/instagram_white.png" alt="Instagram" class="social-icon glow">
         </div>
