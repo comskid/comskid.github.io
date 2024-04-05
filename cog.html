@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Catgirls | cog</title>
@@ -27,11 +28,11 @@
             border-radius: 25px;
             margin: auto; /* Center horizontally */
             width: 550px; /* Adjusted width */
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Center vertically */
             border: none; /* Removed border */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         /* Styles for the troll text */
@@ -68,14 +69,12 @@
 <body>
 <div>
     <div class="box">
-        <pre style="display: flex; justify-content: center; align-items: center;">
-            <img class="pfp" src="img/pfdpp.jpg" style="width: 140px; height: 140px;">
-        </pre>
+        <img class="pfp" src="img/pfdpp.jpg" style="width: 140px; height: 140px;">
         <h2 class="cog-text">Cog</h2> <!-- Bigger text -->
         <p class="troll-text">Troll XD</p> <!-- Normal text size -->
 
         <!-- Social icons -->
-        <div class="center" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);">
+        <div class="center">
             <div class="clickable-box" onclick="window.open('https://www.instagram.com/beeboycog', '_blank');">
                 <img src="logos/instagram_white.png" alt="Instagram" class="social-icon glow">
             </div>
