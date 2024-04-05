@@ -10,10 +10,14 @@
     <link href="css/comskid.css" rel="stylesheet">
     <script src="js/snowstorm.js"></script>
     <style>
-        /* Add glowing text effect to all text */
-        body, a, button, p {
+        /* General styles */
+        body {
+            background-color: #000000;
+            color: #FFFFFF;
+            font-family: 'Courier New', Courier, monospace;
             text-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 30px #FFFFFF;
-            color: #FFFFFF; /* Set text color to white */
+            margin: 0;
+            padding: 0;
         }
 
         /* Center align */
@@ -21,33 +25,30 @@
             text-align: center;
         }
 
-        /* Styles for boxes */
+        /* Box styles */
         .box {
-            text-align: center;
-            padding: 70px 0; /* Updated padding */
-            border-radius: 25px;
-            margin: auto; /* Center horizontally */
-            width: 550px; /* Adjusted width */
+            display: none;
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%); /* Center vertically */
-            border: none; /* Removed border */
-            display: none; /* Initially hide */
+            transform: translate(-50%, -50%);
+            width: 550px;
+            padding: 70px 0;
+            border-radius: 25px;
+            border: none;
         }
 
-        /* Styles for the troll text */
+        /* Text styles */
         .cog-text {
             font-size: 24px;
             margin-bottom: 10px;
         }
 
-        /* Styles for the troll text */
         .troll-text {
             font-size: 16px;
         }
 
-        /* Styles for the clickable boxes */
+        /* Clickable box styles */
         .clickable-box {
             display: inline-block;
             margin: 10px;
@@ -59,36 +60,25 @@
             transform: scale(1.1);
         }
 
-        /* Glowing effect for social icons */
+        /* Social icon styles */
         .social-icon {
             width: 35px;
             height: 35px;
             margin: 5px;
         }
 
-        /* Set background color to black */
-        body {
-            background-color: #000000;
-        }
-
-        /* Styles for full-screen ASCII art */
+        /* Full-screen ASCII button */
         #button {
-            color: hwb(0 100% 0%);
-            font-family: 'Courier New', Courier, monospace;
-            border: none;
-            margin: 0;
-            background-color: #000000;
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 1; /* Ensure it's above other elements */
-        }
-
-        /* ASCI Click to enter hover effect */
-        #button:hover {
-            background-color: #111;
+            color: hwb(0 100% 0%);
+            background-color: #000000;
+            border: none;
+            margin: 0;
+            z-index: 1;
         }
 
         /* Hide button text */
@@ -99,14 +89,13 @@
 </head>
 <body>
 <div class="box" id="site-content">
-    <pre style="display: flex; justify-content: center; align-items: center;">
+    <pre class="center">
         <img class="pfp" src="img/pfdpp.jpg" style="width: 140px; height: 140px;">
     </pre>
-    <h2 class="cog-text">Cog</h2> <!-- Bigger text -->
-    <p class="troll-text">Troll XD</p> <!-- Normal text size -->
+    <h2 class="cog-text">Cog</h2>
+    <p class="troll-text">Troll XD</p>
 
-    <!-- Social icons -->
-    <div class="center" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);">
+    <div class="center">
         <div class="clickable-box" onclick="window.open('https://www.instagram.com/beeboycog', '_blank');">
             <img src="logos/instagram_white.png" alt="Instagram" class="social-icon glow">
         </div>
@@ -120,9 +109,10 @@
             <img src="logos/youtube_white.png" alt="YouTube" class="social-icon glow">
         </div>
     </div>
-<div>
+</div>
 
-<button id="button" onclick="playAudio();document.getElementById('button').hidden=true;document.getElementById('site-content').style.display='block';">
+<!-- ASCII Click to enter -->
+<button id="button" onclick="enterSite();">   
     <div class="center">
         <pre>
 
@@ -145,30 +135,28 @@
 
 <script>
     document.onkeydown = function(e) {
-        if(event.keyCode == 123) {
+        if (event.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0) || e.keyCode == 'U'.charCodeAt(0)))) {
             return false;
         }
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-            return false;
-        }
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-            return false;
-        }
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-            return false;
-        }
-        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-            return false;
-        }
-    }
+    };
+
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
     });
 
-    function playAudio() {
-        // Play audio
+    function enterSite() {
         var myAudio = new Audio('audio/cheer.mp3'); 
+        if (typeof myAudio.loop == 'boolean') {
+            myAudio.loop = true;
+        } else {
+            myAudio.addEventListener('ended', function() {
+                this.currentTime = 0;
+                this.play();
+            }, false);
+        }
         myAudio.play();
+        document.getElementById('button').hidden = true;
+        document.getElementById('site-content').hidden = false;
     }
 </script>
 </body>
