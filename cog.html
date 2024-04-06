@@ -60,6 +60,7 @@
             top: 160px; /* Adjust top position as needed */
             left: 50%;
             transform: translateX(-50%);
+            text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white; /* White glow */
         }
 
         .troll-text {
@@ -68,6 +69,7 @@
             top: 190px; /* Adjust top position as needed */
             left: 50%;
             transform: translateX(-50%);
+            text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white; /* White glow */
         }
 
         /* Clickable box styles */
@@ -130,16 +132,16 @@
 
     <div class="social-icons center">
         <div class="clickable-box" onclick="window.open('https://www.instagram.com/beeboycog', '_blank');">
-            <img src="logos/instagram_white.png" alt="Instagram" class="social-icon glow">
+            <img src="logos/instagram.ico" alt="Instagram" class="social-icon glow">
         </div>
         <div class="clickable-box" onclick="window.open('https://www.tiktok.com/@retainage', '_blank');">
-            <img src="logos/tiktok_white.png" alt="TikTok" class="social-icon glow">
+            <img src="logos/tiktok.ico" alt="TikTok" class="social-icon glow">
         </div>
         <div class="clickable-box" onclick="window.open('https://discord.com/users/1204051161733144630', '_blank');">
-            <img src="logos/discord_white.png" alt="Discord" class="social-icon glow">
+            <img src="logos/discord.ico" alt="Discord" class="social-icon glow">
         </div>
         <div class="clickable-box" onclick="window.open('https://www.youtube.com/channel/trolling', '_blank');">
-            <img src="logos/youtube_white.png" alt="YouTube" class="social-icon glow">
+            <img src="logos/youtube.ico" alt="YouTube" class="social-icon glow">
         </div>
     </div>
 </div>
@@ -161,7 +163,7 @@
                                 \$$$$$$  |                            
                                  \______/                             
 
-                                  Click To Continue To The Site. 
+                      Click To Continue To The Site. 
         </pre>
     </div>
 </button>
@@ -178,7 +180,7 @@
     });
 
     function enterSite() {
-        var myAudio = new Audio('audio/cheer.mp3'); 
+        var myAudio = new Audio('audio/sad.mp3'); 
         if (typeof myAudio.loop == 'boolean') {
             myAudio.loop = true;
         } else {
