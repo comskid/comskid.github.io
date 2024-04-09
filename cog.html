@@ -28,7 +28,6 @@
 
         /* Box styles */
         .box {
-            display: none;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -57,11 +56,11 @@
             text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white; /* White glow */
         }
 
-        .cog-text {
+        .text1 {
             margin-top: 20px;
         }
 
-        .troll-text {
+        .text2 {
             margin-top: 10px;
         }
 
@@ -120,8 +119,8 @@
 <body>
 <div class="box" id="site-content">
     <img class="pfp" src="img/pfdpp.jpg" alt="Profile Picture">
-    <h2 class="center cog-text">Cog</h2>
-    <p class="center troll-text">Troll XD</p>
+    <h2 class="center text1">cog</h2>
+    <p class="center text2">tightasiangirl652</p>
 
     <div class="social-icons center">
         <div class="clickable-box" onclick="window.open('https://www.instagram.com/beeboycog', '_blank');">
@@ -187,15 +186,6 @@
         document.getElementById('site-content').style.display = 'block';
         document.body.style.backgroundColor = ''; // Reset background color
     }
-
-    // Function to set text for headers
-    function setTextForHeaders(cogText, trollText) {
-        document.querySelector('.cog-text').innerText = cogText;
-        document.querySelector('.troll-text').innerText = trollText;
-    }
-
-    // Example usage:
-    setTextForHeaders("cog", "get buff");
 </script>
 </body>
 </html>
