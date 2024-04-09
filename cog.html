@@ -43,17 +43,31 @@
             background-color: black; /* Background color */
         }
 
-        /* Profile picture styles */
-        .pfp {
-            margin-top: 10px; /* Margin instead of absolute positioning */
+        /* Profile picture container styles */
+        .pfp-container {
+            position: relative;
+            margin-top: 10px; /* Adjusted margin */
             width: 140px;
             height: 140px;
+            overflow: hidden; /* Ensure text doesn't overflow */
+        }
+
+        /* Profile picture styles */
+        .pfp {
+            width: 100%; /* Fill the container */
+            height: 100%; /* Fill the container */
         }
 
         /* Text styles */
-        .cog-text, .troll-text {
-            font-size: 24px;
-            text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white; /* White glow */
+        .text-inside-pfp {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 5px;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            font-size: 14px;
+            text-align: center;
         }
 
         /* Clickable box styles */
@@ -110,10 +124,13 @@
 </head>
 <body>
 <div class="box" id="site-content">
-    <img class="pfp" src="img/pfdpp.jpg" alt="Profile Picture">
-    <h2 class="cog-text center" id="cogText">Cog</h2>
-    <p class="troll-text center" id="trollText">Troll XD</p>
-    <p class="additional-text center" id="additionalText">Additional Text</p>
+    <div class="pfp-container">
+        <img class="pfp" src="img/pfdpp.jpg" alt="Profile Picture">
+        <div class="text-inside-pfp">
+            <h2 id="cogText">Cog</h2>
+            <p id="trollText">Troll XD</p>
+        </div>
+    </div>
 
     <div class="social-icons center">
         <div class="clickable-box" onclick="window.open('https://www.instagram.com/beeboycog', '_blank');">
