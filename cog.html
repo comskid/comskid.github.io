@@ -34,9 +34,8 @@
             left: 50%;
             transform: translate(-50%, -50%);
             width: 80vw; /* Adjusted width */
-            height: 80vw; /* Adjusted height to match width */
+            height: auto; /* Adjusted height to match content */
             max-width: 400px; /* Max width */
-            max-height: 400px; /* Max height */
             padding: 20px; /* Adjusted padding */
             border-radius: 25px;
             border: none;
@@ -46,30 +45,14 @@
 
         /* Profile picture styles */
         .pfp {
-            position: absolute;
-            top: 10px; /* Adjust top position as needed */
-            left: 50%;
-            transform: translateX(-50%);
+            margin-top: 10px; /* Margin instead of absolute positioning */
             width: 140px;
             height: 140px;
         }
 
         /* Text styles */
-        .cog-text {
+        .cog-text, .troll-text {
             font-size: 24px;
-            position: absolute; /* Position absolutely */
-            top: 160px; /* Adjust top position as needed */
-            left: 50%;
-            transform: translateX(-50%);
-            text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white; /* White glow */
-        }
-
-        .troll-text {
-            font-size: 16px;
-            position: absolute; /* Position absolutely */
-            top: 190px; /* Adjust top position as needed */
-            left: 50%;
-            transform: translateX(-50%);
             text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white; /* White glow */
         }
 
@@ -87,10 +70,7 @@
 
         /* Social icon styles */
         .social-icons {
-            position: absolute;
-            bottom: 40px; /* Adjust bottom position as needed */
-            left: 50%;
-            transform: translateX(-50%);
+            margin-top: 20px;
             display: flex; /* Align icons in a row */
             justify-content: center; /* Center align icons */
         }
@@ -131,8 +111,9 @@
 <body>
 <div class="box" id="site-content">
     <img class="pfp" src="img/pfdpp.jpg" alt="Profile Picture">
-    <h2 class="cog-text center">Cog</h2>
-    <p class="troll-text center">Troll XD</p>
+    <h2 class="cog-text center" id="cogText">Cog</h2>
+    <p class="troll-text center" id="trollText">Troll XD</p>
+    <p class="additional-text center" id="additionalText">Additional Text</p>
 
     <div class="social-icons center">
         <div class="clickable-box" onclick="window.open('https://www.instagram.com/beeboycog', '_blank');">
@@ -197,6 +178,22 @@
         document.getElementById('button').hidden = true;
         document.getElementById('site-content').style.display = 'block';
         document.body.style.backgroundColor = ''; // Reset background color
+    }
+
+    // Function to set new text for Cog
+    function setCogText(newText) {
+        document.getElementById('cogText').innerText = newText;
+    }
+
+    // Function to set new text for Troll
+    function setTrollText(newText) {
+        document.getElementById('trollText').innerText = newText;
+    }
+
+    // Function to add additional text
+    function addAdditionalText(newText) {
+        var additionalTextElement = document.getElementById('additionalText');
+        additionalTextElement.innerText += " " + newText;
     }
 </script>
 </body>
