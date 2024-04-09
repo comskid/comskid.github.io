@@ -34,9 +34,8 @@
             left: 50%;
             transform: translate(-50%, -50%);
             width: 80vw; /* Adjusted width */
-            height: 80vw; /* Adjusted height to match width */
+            height: auto; /* Adjusted height */
             max-width: 400px; /* Max width */
-            max-height: 400px; /* Max height */
             padding: 20px; /* Adjusted padding */
             border-radius: 25px;
             border: none;
@@ -46,10 +45,8 @@
 
         /* Profile picture styles */
         .pfp {
-            position: absolute;
-            top: 10px; /* Adjust top position as needed */
-            left: 50%;
-            transform: translateX(-50%);
+            display: block;
+            margin: 0 auto;
             width: 140px;
             height: 140px;
         }
@@ -57,11 +54,15 @@
         /* Text styles */
         h2, p {
             font-size: 24px;
-            position: absolute; /* Position absolutely */
-            top: 170px; /* Adjust top position as needed */
-            left: 50%;
-            transform: translateX(-50%);
             text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white; /* White glow */
+        }
+
+        .cog-text {
+            margin-top: 20px;
+        }
+
+        .troll-text {
+            margin-top: 10px;
         }
 
         /* Clickable box styles */
@@ -78,12 +79,9 @@
 
         /* Social icon styles */
         .social-icons {
-            position: absolute;
-            top: 110px; /* Adjust top position as needed */
-            left: 50%;
-            transform: translateX(-50%);
             display: flex; /* Align icons in a row */
             justify-content: center; /* Center align icons */
+            margin-top: 20px;
         }
 
         .social-icon {
@@ -122,8 +120,8 @@
 <body>
 <div class="box" id="site-content">
     <img class="pfp" src="img/pfdpp.jpg" alt="Profile Picture">
-    <h2 class="center" id="cogText">Cog</h2>
-    <p class="center" id="trollText">Troll XD</p>
+    <h2 class="center cog-text">Cog</h2>
+    <p class="center troll-text">Troll XD</p>
 
     <div class="social-icons center">
         <div class="clickable-box" onclick="window.open('https://www.instagram.com/beeboycog', '_blank');">
@@ -192,8 +190,8 @@
 
     // Function to set text for headers
     function setTextForHeaders(cogText, trollText) {
-        document.getElementById('cogText').innerText = cogText;
-        document.getElementById('trollText').innerText = trollText;
+        document.querySelector('.cog-text').innerText = cogText;
+        document.querySelector('.troll-text').innerText = trollText;
     }
 
     // Example usage:
