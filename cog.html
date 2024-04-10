@@ -44,7 +44,7 @@
         /* Profile picture styles */
         .pfp {
             display: block;
-            margin: -100px auto 20px; /* Adjust top margin to move the profile picture up */
+            margin: -80px auto 20px; /* Adjusted top margin to move the profile picture up */
             width: 140px;
             height: 140px;
         }
@@ -54,6 +54,19 @@
             font-size: 24px;
             text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white; /* White glow */
             margin: 10px 0; /* Add margin to separate text */
+        }
+
+        .sparkling {
+            animation: sparkling 1s infinite alternate;
+        }
+
+        @keyframes sparkling {
+            from {
+                text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+            }
+            to {
+                text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px #FF0000, 0 0 70px #FF0000, 0 0 100px #FF0000;
+            }
         }
 
         /* Clickable box styles */
@@ -153,6 +166,8 @@
 </button>
 
 <script>
+    let glowing = true; // Variable to toggle the glowing effect
+
     document.onkeydown = function(e) {
         if (event.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0) || e.keyCode == 'U'.charCodeAt(0)))) {
             return false;
@@ -177,6 +192,16 @@
         document.getElementById('button').hidden = true;
         document.getElementById('site-content').style.display = 'block';
         document.body.style.backgroundColor = ''; // Reset background color
+    }
+
+    function toggleGlow() {
+        let h2 = document.querySelector('h2.center');
+        if (glowing) {
+            h2.classList.remove('sparkling');
+        } else {
+            h2.classList.add('sparkling');
+        }
+        glowing = !glowing;
     }
 </script>
 </body>
