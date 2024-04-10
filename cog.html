@@ -44,7 +44,7 @@
         /* Profile picture styles */
         .pfp {
             display: block;
-            margin: -120px auto 20px; /* Adjust top margin to move the profile picture up */
+            margin: -100px auto 20px; /* Adjust top margin to move the profile picture up */
             width: 140px;
             height: 140px;
         }
@@ -53,14 +53,7 @@
         h2, p {
             font-size: 24px;
             text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white; /* White glow */
-        }
-
-        .text1 {
-            margin-top: 20px;
-        }
-
-        .text2 {
-            margin-top: 10px;
+            margin: 10px 0; /* Add margin to separate text */
         }
 
         /* Clickable box styles */
@@ -118,8 +111,8 @@
 <body>
 <div class="box" id="site-content">
     <img class="pfp" src="img/pfdpp.jpg" alt="Profile Picture">
-    <h2 class="center text1">Text 1</h2>
-    <p class="center text2">Text 2</p>
+    <h2 class="center">Text 1</h2>
+    <p class="center">Text 2</p>
 
     <div class="social-icons center">
         <div class="clickable-box" onclick="window.open('https://www.instagram.com/beeboycog', '_blank');">
