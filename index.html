@@ -13,17 +13,25 @@
     padding: 20px; /* Adjust padding as needed */
     box-sizing: border-box;
     overflow: hidden; /* Hide overflow content */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
   .message-container {
-    height: 100%;
     overflow-y: auto; /* Enable vertical scrolling */
+    width: 50%;
+    padding-right: 20px;
   }
   .message {
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
-    border-radius: 10px;
+    background-color: transparent;
     box-shadow: 0 0 10px #009cff; /* Glow effect matches text color */
     margin-bottom: 20px;
+    width: 100%;
+    white-space: pre-wrap;
+  }
+  audio {
+    display: none; /* Hide audio controls */
   }
 </style>
 </head>
@@ -44,7 +52,7 @@
                                                            ||||   	           :   they were hurt   ||||
                                                            ||||       cuntlist	   :   is lying.        ||||
                                                            ||||   	           :   apart from:      ||||
-                                                           ||||        by cog	   :   »  cog   	||||
+                                                           ||||           	   :   »  cog   	||||
                                                            ||||        		   :   »  salmon	||||
                                                            ||||                    :   »  cody          ||||
                                                            ||||  	           :   »  meiii	        ||||
@@ -140,9 +148,8 @@
   </div>
 </div>
 
-<audio controls autoplay volume="0.5">
-  <source src="audio/oneam.mp3" type="audio/mp3">
-  Your browser does not support the audio element.
+<audio autoplay>
+  <source src="audio/sticks.mp3" type="audio/mp3">
 </audio>
 
 </body>
