@@ -8,10 +8,14 @@
   <pre style="word-wrap: break-word; white-space: pre-wrap;">
 cogle13
   </pre>
-
-<audio autoplay>
-  <source src="audio/tiles.mp3" type="audio/mpeg">
-</audio>
-
+    function enterSite() {
+        var myAudio = new Audio('audio/kicking.mp3'); 
+        if (typeof myAudio.loop == 'boolean') {
+            myAudio.loop = true;
+        } else {
+            myAudio.addEventListener('ended', function() {
+                this.currentTime = 0;
+                this.play();
+            }, false);
 </body>
 </html>
