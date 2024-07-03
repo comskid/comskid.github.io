@@ -1,1 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deepwoken prompt gen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Deepwoken Build Generator</h1>
+        <div class="form-group">
+            <label for="weaponType">Weapon Type:</label>
+            <select id="weaponType">
+                <option>Heavy Weapon</option>
+                <option>Medium Weapon</option>
+                <option>Light Weapon</option>
+                <option>Legendary Weapon</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="attunements">Attunement(s):</label>
+            <select id="attunements" multiple>
+                <option>Attunementless</option>
+                <option>Flamecharm</option>
+                <option>Frostdraw</option>
+                <option>Thundercall</option>
+                <option>Galebreathe</option>
+                <option>Shadowcast</option>
+                <option>Ironsing</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="oath">Oath:</label>
+            <select id="oath">
+                <option>Visionshaper</option>
+                <option>Dawnwalker</option>
+                <option>Contractor</option>
+                <option>Jetstriker</option>
+                <option>Arcwarder</option>
+                <option>Oathless</option>
+                <option>Starkindred</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="playstyle">Playstyle:</label>
+            <select id="playstyle">
+                <option>Aggressive</option>
+                <option>Passive</option>
+                <option>Extended</option>
+            </select>
+        </div>
+        <button onclick="generatePrompt()">Generate Prompt</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        function generatePrompt() {
+            const weaponType = document.getElementById('weaponType').value;
+            const attunements = Array.from(document.getElementById('attunements').selectedOptions).map(option => option.value);
+            const oath = document.getElementById('oath').value;
+            const playstyle = document.getElementById('playstyle').value;
+            
+            let buildType;
+            if (attunements.includes('Attunementless')) {
+                buildType = 'Weapon Master';
+            } else if (attunements.length > 1) {
+                buildType = 'Hybrid (Mastering Weapon and Attunement)';
+            } else {
+                buildType = 'Mage';
+            }
+
+            const attunementsString = attunements.join(', ');
+            const result = `
+                Weapon Type: ${weaponType}<br>
+                Attunement(s): ${attunementsString}<br>
+                Oath: ${oath}<br>
+                Build Type: ${buildType}<br>
+                Playstyle: ${playstyle}
+            `;
+
+            document.getElementById('result').innerHTML = result;
+            document.getElementById('result').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
 
